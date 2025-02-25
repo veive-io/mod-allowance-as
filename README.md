@@ -12,7 +12,7 @@ The `ModAllowance` module serves as a pivotal component in the Veive ecosystem b
 
 - **Validation Process**: During execution, `ModAllowance` checks if the incoming operation matches any stored allowances. It verifies transaction ID, contract ID, entry point, and arguments. If a match is found, the corresponding allowance is removed, ensuring that it cannot be reused, thus preventing replay attacks. This process includes verifying allowances for operations that may be internally triggered by other contracts, ensuring a comprehensive validation scope.
 
-- **Scope Management**: The default scope for `ModAllowance` is set to "any," meaning it can validate any operation unless a more specific scope is defined. This flexibility allows for the module's application across a broad range of scenarios, from general validation to specific contract operations.
+- **Scope Management**: The default scope for `ModAllowance` is set to "call_contract," meaning it can validate any call contract operation unless a more specific scope is defined. This flexibility allows for the module's application across a broad range of scenarios, from general validation to specific contract operations.
 
 ## **Scope**
 
