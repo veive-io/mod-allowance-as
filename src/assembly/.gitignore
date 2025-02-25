@@ -1,0 +1,4 @@
+node_modules
+packages/contract/src/build
+.env
+.idea

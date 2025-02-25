@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package modallowance;
+
+import "koinos/options.proto";
+
+message Uint32 {
+  uint32 value = 1;
+}
+
+message allowances {
+    repeated allowance value = 1;
+}
+
+message operation {
+    bytes contract_id = 1 [(koinos.btype) = ADDRESS];
+    uint32 entry_point = 2;
+    bytes args = 3;
+}
+
+message allowance {
+    bytes tx_id = 1;
+    bytes caller = 2 [(koinos.btype) = ADDRESS];
+    operation operation = 3;
+}
+
+message allow_args {
+    bytes user = 1 [(koinos.btype) = ADDRESS];
+    operation operation = 2;
+}
+
+message get_allowances_args {
+    bytes user = 1 [(koinos.btype) = ADDRESS];
+}
+
+message get_allowances_result {
+    repeated allowance value = 1;
+}

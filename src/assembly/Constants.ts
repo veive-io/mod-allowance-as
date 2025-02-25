@@ -1,0 +1,1 @@
+export const ENTRY_POINT = 1;
