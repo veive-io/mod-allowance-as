@@ -14,10 +14,6 @@ The `ModAllowance` module serves as a pivotal component in the Veive ecosystem b
 
 - **Scope Management**: The default scope for `ModAllowance` is set to "call_contract," meaning it can validate any call contract operation unless a more specific scope is defined. This flexibility allows for the module's application across a broad range of scenarios, from general validation to specific contract operations.
 
-## **Scope**
-
-The default scope for `ModAllowance` is "any," allowing it to validate any operation in the absence of more specific scope definitions. This flexibility means the module can serve as a universal validator, covering a wide range of scenarios without the need for granular scope definitions. It ensures that any operation, whether user-initiated or internally triggered within a contract, is subject to validation.
-
 ## **Usage**
 
 ### **Installation**
