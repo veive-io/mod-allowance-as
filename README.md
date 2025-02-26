@@ -6,16 +6,6 @@
 
 Full documentation: https://docs.veive.io/veive-docs/framework/core-modules/mod-allowance
 
-## **Purpose**
-
-The `ModAllowance` module serves as a pivotal component in the Veive ecosystem by validating operations against a set of pre-authorized allowances. This functionality is crucial for both external and internal operations, ensuring comprehensive security and control. Key features include:
-
-- **Allowance Mechanism**: Users can pre-authorize specific operations using the `allow` method, which stores details such as the operation's contract ID, entry point, arguments, and transaction ID. This mechanism prevents unauthorized transactions and ensures that each allowance is tied to a specific transaction, preventing reuse. This feature is particularly important for managing internal operations, where contracts may invoke additional operations.
-
-- **Validation Process**: During execution, `ModAllowance` checks if the incoming operation matches any stored allowances. It verifies transaction ID, contract ID, entry point, and arguments. If a match is found, the corresponding allowance is removed, ensuring that it cannot be reused, thus preventing replay attacks. This process includes verifying allowances for operations that may be internally triggered by other contracts, ensuring a comprehensive validation scope.
-
-- **Scope Management**: The default scope for `ModAllowance` is set to "call_contract," meaning it can validate any call contract operation unless a more specific scope is defined. This flexibility allows for the module's application across a broad range of scenarios, from general validation to specific contract operations.
-
 ## **Usage**
 
 ### **Installation**
